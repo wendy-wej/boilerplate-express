@@ -12,17 +12,13 @@ app.get("/", (req, res) => {
 //Used to render static assets like stylesheets, scripts, images, etc.
 app.use("/public", express.static(__dirname + "/public"));
 
-app.get("/json", (req,res) =>{
-    if(process.env.MESSAGE_STYLE==="uppercase"){
-        const response = "HELLO JSON"
-        res.json({"message": response})
-    } else {
-        const response = "Hello json"
-        res.json({"message": response})
+app.get("/json", (req, res) => {
+    let message = "Hello json"
+    if (process.env.MESSAGE_STYLE === "uppercase") {
+        message = message.toUpperCase()
     }
-        
-    });
-
+    res.json({"message": message})
+});
 
 
 
