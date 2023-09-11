@@ -8,7 +8,8 @@ app.get("/", (req, res) => {
     res.sendFile(my_path)
 })
 
-
+//Used to render static assets like stylesheets, scripts, images, etc.
+app.use("/public", express.static(__dirname + "/public"))
 
 
 
