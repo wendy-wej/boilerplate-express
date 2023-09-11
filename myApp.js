@@ -11,6 +11,10 @@ app.get("/", (req, res) => {
 //Used to render static assets like stylesheets, scripts, images, etc.
 app.use("/public", express.static(__dirname + "/public"))
 
+app.get("/json", (req,res) =>{
+    response = {"message": "Hello json"}
+    res.json(response)
+})
 
 
 
