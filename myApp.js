@@ -44,8 +44,14 @@ app.get("/name", (req,res)=> {
     res.json({"name": `${firstName} ${lastName}`})
 })
 
-app.use(bodyParser.urlencoded({extended: false}))
+//app.use(bodyParser.urlencoded({extended: false}))
 
+
+app.post("/name", bodyParser.urlencoded({extended: false}), (req,res)=> {
+    let firstName = req.body.first
+    let lastName = req.body.last
+    res.json({"name": `${firstName} ${lastName}`})
+})
 
 
 
